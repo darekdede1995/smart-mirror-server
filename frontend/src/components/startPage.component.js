@@ -13,9 +13,6 @@ function StartPage() {
     return (
         <div className="start-container">
             <div className="button-group">
-                <Link  to="/config">
-                    przycisk roboczy
-                </Link>
                 <button className={login ? 'selected-button' : ''} onClick={loginToggle} >LOGIN</button>
                 <button className={register ? 'selected-button' : ''} onClick={registerToggle}>REGISTER</button>
             </div>

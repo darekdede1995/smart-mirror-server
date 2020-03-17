@@ -16,24 +16,24 @@ const UserSchema = new Schema({
         type: Number,
         required: true
     },
-    connection_key:{
+    connection_key: {
         type: String,
         required: false
     },
-    uploaded_photo: {
-        type: Boolean,
-        required: true
+    photo: {
+        type: String,
+        required: false
     },
 }, {
     timestamps: true
 });
 
-UserSchema.methods.generateHash = function(password){
+UserSchema.methods.generateHash = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-UserSchema.methods.validPassword = function(password){
-  return bcrypt.compareSync(password, this.password);
+UserSchema.methods.validPassword = function (password) {
+    return bcrypt.compareSync(password, this.password);
 };
 
 const User = mongoose.model('User', UserSchema);

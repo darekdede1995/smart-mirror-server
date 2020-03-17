@@ -32,7 +32,6 @@ router.route('/register').post(async (req, res) => {
 
     const username = req.body.username;
     const password = req.body.password;
-    const uploaded_photo = false;
     let number = 0;
     let unique = false;
 
@@ -58,7 +57,8 @@ router.route('/register').post(async (req, res) => {
         newUser.username = username;
         newUser.password = newUser.generateHash(password);
         newUser.number = number;
-        newUser.uploaded_photo = uploaded_photo;
+        newUser.connection_key = '';
+
 
         newUser.save()
             .then(() => {
@@ -68,6 +68,25 @@ router.route('/register').post(async (req, res) => {
                 });
             }).catch(err => res.status(400).json("Error: " + err));
     }).catch(err => res.status(400).json("Error: " + err));
+})
+
+
+router.route('/uploadPhoto/:id').post((req, res) => {
+
+
+    User.findById(req.params.id)
+        .then(user => {
+
+            const id = user.id;
+
+            user.connection_key = id.substring(id.length - 4);
+            user.photo = req.body.url;
+
+            user.save()
+                .then((user) => res.json(user))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
 })
 
 module.exports = router;
