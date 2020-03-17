@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+.button-group {
+  width: 100%;
+}
+
+button,
+.selected-button {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  border: 2px solid lightgray;
+  width: 10%;
+  margin: 2%;
+  padding: 1%;
+  border-radius: 15px;
+  -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  color: black;
+  background: transparent;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.selected-button {
+  color: white;
+  background: black;
+}
+
+.selected-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.start-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.register-container,
+.login-container,
+.config-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.register-container input[type=text],
+.register-container input[type=password],
+.login-container input[type=text],
+.login-container input[type=password],
+.config-container input[type=text],
+.config-container input[type=password] {
+  border: 2px solid lightgray;
+  width: 20%;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.config-container progress {
+  border: none;
+  background-color: #64acff;
+}
+
+.error {
+  color: lightcoral;
+}
+/*# sourceMappingURL=index.css.map */

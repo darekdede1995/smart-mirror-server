@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+.button-group {
+    width: 100%;
+}
+
+button,
+.selected-button {
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    border: 2px solid lightgray;
+    width: 10%;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+button {
+    color: black;
+    background: transparent;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.selected-button {
+    color: white;
+    background: black;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.start-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.register-container,
+.login-container,
+.config-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    input[type=text],
+    input[type=password] {
+        border: 2px solid lightgray;
+        width: 20%;
+        margin: 1%;
+        padding: 1%;
+        border-radius: 5px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.config-container {
+    progress {
+        border: none;
+        background-color: rgb(100, 172, 255);
+    }
+}
+
+
+.error {
+    color: lightcoral;
+}
