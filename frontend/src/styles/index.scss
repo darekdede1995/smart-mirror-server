@@ -15,7 +15,7 @@ button,
     font-family: 'Anton', sans-serif;
     font-size: 2rem;
     border: 2px solid lightgray;
-    width: 10%;
+    min-width: 15%;
     margin: 2%;
     padding: 1%;
     border-radius: 15px;
@@ -78,7 +78,7 @@ button {
 .config-container .config-field {
     align-items: center;
     font-size: 2em;
-    width: 40%;
+    width: 60%;
     display: flex;
     justify-content: center;
     margin: 0.5%;

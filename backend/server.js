@@ -24,10 +24,8 @@ connection.once('open', () => {
 })
 
 const userRoutes = require('./routes/users');
-// const tasksRoutes = require('./routes/config');
 
 app.use('/api/users', userRoutes);
-// app.use('/api/config', tasksRoutes);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '/../frontend/build')));

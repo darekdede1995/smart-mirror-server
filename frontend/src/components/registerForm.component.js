@@ -13,11 +13,11 @@ function RegisterForm(props) {
 
     return (
         <div className="register-container">
-            <input value={username} type="text" placeholder="username" onChange={usernameChange} />
-            <input value={password} type="password" placeholder="password" onChange={passwordChange} />
-            <input value={repeatPassword} type="password" placeholder="repeat password" onChange={repeatPasswordChange} />
+            <input value={username} type="text" placeholder="Nazwa użytkownika" onChange={usernameChange} />
+            <input value={password} type="password" placeholder="Hasło" onChange={passwordChange} />
+            <input value={repeatPassword} type="password" placeholder="Powtórz hasło" onChange={repeatPasswordChange} />
             <div className="error">{message}</div>
-            <button onClick={register}>SUMBIT</button>
+            <button onClick={register}>Wyślij</button>
         </div>
     );
 
@@ -37,9 +37,9 @@ function RegisterForm(props) {
         e.preventDefault();
 
         if (!username || !password || !repeatPassword) {
-            setMessage('Fields cant be blank');
+            setMessage('Pola nie mogą być puste');
         } else if (password !== repeatPassword) {
-            setMessage('Passwords have to be identically');
+            setMessage('Hasła muszą być identyczne');
         } else {
 
             const user = {

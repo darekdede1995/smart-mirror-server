@@ -13,8 +13,8 @@ function StartPage() {
     return (
         <div className="start-container">
             <div className="button-group">
-                <button className={login ? 'selected-button' : ''} onClick={loginToggle} >LOGIN</button>
-                <button className={register ? 'selected-button' : ''} onClick={registerToggle}>REGISTER</button>
+                <button className={login ? 'selected-button' : ''} onClick={loginToggle} >Zaloguj</button>
+                <button className={register ? 'selected-button' : ''} onClick={registerToggle}>Rejestracja</button>
             </div>
             <div hidden={!login}>
                 <LoginForm />

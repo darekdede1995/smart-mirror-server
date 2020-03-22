@@ -16,10 +16,10 @@ function LoginForm() {
     return (
         <div className="login-container">
             {(localStorage || redirect) ? <Redirect to="/config" /> : ''}
-            <input value={username} type="text" placeholder="username" onChange={usernameChange} />
-            <input value={password} type="password" placeholder="password" onChange={passwordChange} />
+            <input value={username} type="text" placeholder="nazwa użytkownika" onChange={usernameChange} />
+            <input value={password} type="password" placeholder="hasło" onChange={passwordChange} />
             <div className="error">{message}</div>
-            <button onClick={login}>SUMBIT</button>
+            <button onClick={login}>Wyślij</button>
         </div>
     );
 
@@ -35,7 +35,7 @@ function LoginForm() {
         e.preventDefault();
 
         if (!username || !password) {
-            setMessage('Fields cant be blank');
+            setMessage('Pola nie mogą być puste');
         } else {
 
             const user = {
@@ -43,8 +43,7 @@ function LoginForm() {
                 password: password
             }
 
-            axios
-                .post(process.env.REACT_APP_API_URL + '/api/users/login', user)
+            axios.post(process.env.REACT_APP_API_URL + '/api/users/login', user)
                 .then(res => {
                     setUsername('');
                     setPassword('');
