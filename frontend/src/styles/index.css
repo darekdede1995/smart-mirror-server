@@ -123,6 +123,13 @@ button:hover {
   width: 50%;
 }
 
+.key-activated {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
 .connection-key {
   text-transform: uppercase;
 }

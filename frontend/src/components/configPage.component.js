@@ -32,16 +32,28 @@ function ConfigPage() {
             </div>
             <div className="config-field">
                 <div className="key">Identyfikator:</div>
-                <div className="value">{(localStorage && key) ? localStorage.user.number : ''}</div>
+                <div className="value">{(localStorage && (key || localStorage.user.number)) ? localStorage.user.number : ''}</div>
             </div>
             <div className="config-field">
                 <div className="key">Klucz:</div>
                 <div className="connection-key value">{(localStorage && !key) ? localStorage.user.connection_key : ''}{key}</div>
             </div>
-            <div className="config-field">
-                <div className="key">Aktywuj kalendarz</div>
-                <div className="value" onClick={activateCalendar} style={{ color: 'green', cursor: 'pointer' }}> Aktywuj</div>
-            </div>
+            {(localStorage && localStorage.user.token) ?
+                (
+                    <div className="config-field" >
+                        <div className="key-activated" style={{ color: 'green' }}>Kalendarz aktywowany</div>
+                        {/* <div className="value" onClick={activateCalendar} style={{ color: 'green', cursor: 'pointer' }}> Aktywuj</div> */}
+                    </div>
+                )
+                :
+                (
+                    <div className="config-field" >
+                        <div className="key">Aktywuj kalendarz</div>
+                        <div className="value" onClick={activateCalendar} style={{ color: 'green', cursor: 'pointer' }}> Aktywuj</div>
+                    </div>
+                )
+            }
+
             <div className="button-group">
                 <button onClick={save}>Zapisz</button>
                 <button onClick={logout}>Wyloguj</button>
