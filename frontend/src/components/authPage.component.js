@@ -2,7 +2,6 @@ import React from 'react';
 import "../styles/index.css";
 import axios from "axios";
 import { getFromStorage } from '../utils/storage';
-import { Redirect } from "react-router-dom";
 
 function AuthPage() {
 
@@ -37,22 +36,6 @@ function AuthPage() {
                     console.log(error.response);
                 });
         }
-
-        if (queryString.includes('token')) {
-
-        }
-        // const data = {
-        //     user: localStorage.user,
-        //     code: code
-        // }
-
-        // axios.post(process.env.REACT_APP_API_URL + '/api/users/code', data)
-        //     .then(res => {
-        //         window.close();
-        //     })
-        //     .catch(error => {
-        //         console.log(error.response);
-        //     });
     }
 }
 
