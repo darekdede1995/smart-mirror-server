@@ -3,7 +3,6 @@ import "../styles/index.css";
 import { useState } from 'react';
 import LoginForm from "./loginForm.component";
 import RegisterForm from "./registerForm.component";
-import { Link } from 'react-router-dom';
 
 function StartPage() {
 
